@@ -14,7 +14,7 @@ with scope("config") as c:
     c.release_packages_path = os.environ["HH_REZ_REPO_RELEASE_EXT"]
 
 requires = [
-    "imath",
+    "imath", "zlib",
 ]
 
 private_build_requires = []
@@ -32,8 +32,8 @@ def commands():
     env.OPENEXR_INCLUDE_DIR = "{root}/include"
 
     env.PATH.append("{root}/bin")
-    env.LD_LIBRARY_PATH.append("{root}/lib64")
-    env.PKG_CONFIG_PATH.append("{root}/lib64/pkgconfig")
+    env.PATH.append("{root}/lib")
+    env.PKG_CONFIG_PATH.append("{root}/lib/pkgconfig")
 
 
 uuid = "repository.openexr"
