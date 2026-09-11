@@ -1,6 +1,6 @@
 name = "openexr"
 
-version = "3.1.12.hh.1.0.1"
+version = "3.1.12.hh.1.0.2"
 
 authors = [
     "ILM & AcademySoftwareFoundation",
@@ -17,7 +17,9 @@ requires = [
     "imath", "zlib",
 ]
 
-private_build_requires = []
+private_build_requires = [
+    "visual_studio",
+]
 
 variants = []
 
@@ -32,7 +34,8 @@ def commands():
     env.OPENEXR_INCLUDE_DIR = "{root}/include"
 
     env.PATH.append("{root}/bin")
-    env.PATH.append("{root}/lib")
+    env.LD_LIBRARY_PATH.append("{root}/bin")
+    env.LIB.append("{root}/lib")
     env.PKG_CONFIG_PATH.append("{root}/lib/pkgconfig")
 
 
