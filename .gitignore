@@ -62,5 +62,8 @@ __pycache__/
 *.swp
 
 # Ignore Bazel generated files
-bazel-* 
+bazel-*
 MODULE.bazel.lock
+
+# HH
+_rez_build
